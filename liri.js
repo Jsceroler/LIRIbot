@@ -1,12 +1,46 @@
 require("dotenv").config();
-require("dotenv").config();
-var keys = require("./keys")
-var request = require("request")
-var Spotify = require("node-spotify-api")
-var dateFormat = require("dateFormat")
-var fs = require("fs")
+var keys = require("./keys.js");
+var axios = require("axios");
+var moment = require("moment");
+var fs = require("fs");
+var Spotify = require("node-spotify-api");
+var spotify = new Spotify(keys.spotify);
+const input = process.argv.slice(3).join();
+var choice = process.argv[2];
 
-//consert-this function for finding bands in town
-var concertThis = function(artist){
-    
+//
+switch (choice) {
+    case "concert-this":
+        concert(input);
+        break;
+    case "spotify-this":
+        if (input) {
+            spotifyThis(input);
+        } else {
+            spotifyThis("The Sign Ace of Base");
+        }
+        break;
+    case "movie-this":
+        if (input) {
+            getMovie(input);
+        } else {
+            getMovie("Mr. Nobody");
+        }
+        break;
+    case "do-thing":
+        doThing();
+        break;
+    default:
+        console.log("Try again.")
+}
+function concert(artist) {
+    axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(function (response) {
+        var songData = response.data[0];
+        console.log(`
+        \nVenue Name: ${songData.venue.name}
+        \nVenue Location: ${songData.venue.city}, ${songData.venue.region}
+        \nDate of Event: ${ moment(response.data[0].datetime).format("MM/DD/YYYY")}
+        `);
+
+    })
 }
