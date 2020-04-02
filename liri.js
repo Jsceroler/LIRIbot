@@ -13,7 +13,7 @@ switch (choice) {
     case "concert-this":
         concert(input);
         break;
-    case "spotify-this":
+    case "spotify-this-song":
         if (input) {
             spotifyThis(input);
         } else {
@@ -27,7 +27,7 @@ switch (choice) {
             getMovie("Mr. Nobody");
         }
         break;
-    case "do-thing":
+    case "do-what-it-says":
         doThing();
         break;
     default:
