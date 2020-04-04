@@ -1,14 +1,16 @@
-#Liri-bot
+# Liri-bot
 ***
 LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
+
 ***
-#Commands
+# Commands
 <ul>
 <li>concert-this</li>
 <li>spotify-this-song</li>
 <li>movie-this</li>
 <li>do-what-it-says</li>
 </ul>
+
 ***
 
 1. `node liri.js concert-this <artist/band name here>`
@@ -61,22 +63,22 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
 ***
 
-Concert-this
+# Concert-this
 
 ![Concert-this](https://media.giphy.com/media/SWcNV5jvgImwlR4Bqb/giphy.gif)
 
-Spotify-this
+# Spotify-this
 
 ![Spotify-this](https://media.giphy.com/media/SVMro5EOFFvF6FXVeu/giphy.gif)
 
-Movie-this
+# Movie-this
 
 ![Spotify-this](https://media.giphy.com/media/UX59PnzGK0ZTDz3os4/giphy.gif)
 
-do-what-it-says
+# do-what-it-says
 
 ![Do-what-it-says](https://media.giphy.com/media/hpWvo5VlQP5xX9HTLc/giphy.gif)
 ***
 I figured this homework was a big more about learning how to make a decent README file, so I took a bit of time to learn about it. Took example from the homework description and added my own flavor to it.
 ***
-[My GitHub](https://github.com/Jsceroler?tab=repositories)
+# [My GitHub](https://github.com/Jsceroler?tab=repositories)
