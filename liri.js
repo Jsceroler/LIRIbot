@@ -22,13 +22,13 @@ switch (choice) {
         break;
     case "movie-this":
         if (input) {
-            getMovie(input);
+            movie(input);
         } else {
-            getMovie("Mr. Nobody");
+            movie("Mr. Nobody");
         }
         break;
     case "do-what-it-says":
-        doThing();
+        evilDo();
         break;
     default:
         console.log("Try again.")
@@ -43,4 +43,51 @@ function concert(artist) {
         `);
 
     })
+}
+
+//Took a big to mess with spotify and learn about .env, but I got it. Wish I had done this for first proj.
+function spotifyThis(song) {
+    spotify.search({
+        type: "track",
+        query: song
+    }, function (err, data) {
+        if (err) {
+            return console.log("Error occurred: " + err);
+        }
+        console.log(
+            `
+            \nArtist: ${data.tracks.items[0].artists[0].name}
+            \nSong: ${data.tracks.items[0].name} 
+            \nLink: ${data.tracks.items[0].external_urls.spotify} 
+            \nAlbum: ${data.tracks.items[0].album.name} 
+            `)
+    })
+};
+
+function movie(movie) {
+    axios.get("http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy").then(
+        function (response) {
+            console.log(`
+            Title:  ${response.data.Title}
+            Year:  ${ response.data.Year}
+            IMDB Rating:  ${ response.data.imdbRating}
+            Rotten Tomatoes Rating:  ${ response.data.Ratings[2].Value}
+            Country:  ${ response.data.Country}
+            Language:  ${ response.data.Language}
+            Plot:  ${ response.data.Plot}
+            Actors:  ${ response.data.Actors}
+            `)
+        })
+
+}
+//the evil do that I do do. Simple re-direct to random.txt
+function evilDo() {
+    fs.readFile("random.txt", "utf-8", function (err, data) {
+        if (err) {
+            return console.log(error);
+        }
+        var random = data.split(",");
+        spotifyThis(random[1]);
+    });
+
 }
