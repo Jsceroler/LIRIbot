@@ -10,6 +10,7 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 <li>do-what-it-says</li>
 </ul>
 ***
+
 1. `node liri.js concert-this <artist/band name here>`
 
    * This will search the Bands in Town Artist Events API (`"https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"`) for an artist and render the following information about each event to the terminal:
@@ -57,6 +58,24 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 4. `node liri.js do-what-it-says`
 
   * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
+
+***
+
+Concert-this
+
+![Concert-this](https://media.giphy.com/media/SWcNV5jvgImwlR4Bqb/giphy.gif)
+
+Spotify-this
+
+![Spotify-this](https://media.giphy.com/media/SVMro5EOFFvF6FXVeu/giphy.gif)
+
+Movie-this
+
+![Spotify-this](https://media.giphy.com/media/UX59PnzGK0ZTDz3os4/giphy.gif)
+
+do-what-it-says
+
+![Do-what-it-says](https://media.giphy.com/media/hpWvo5VlQP5xX9HTLc/giphy.gif)
 ***
 I figured this homework was a big more about learning how to make a decent README file, so I took a bit of time to learn about it. Took example from the homework description and added my own flavor to it.
 ***
